@@ -6,7 +6,7 @@ class UserAdmin(admin.ModelAdmin):
     list_display  = ['username', 'email']
 
 class ProfileAdmin(admin.ModelAdmin):
-    search_fields  = ['user']
+    search_fields  = ['user'] # user is ForeignKey, can't be accessed directly. how about useing 'user__username'
     list_display = ['thumbnail', 'user', 'full_name']
 
 class CategoryAdmin(admin.ModelAdmin):
